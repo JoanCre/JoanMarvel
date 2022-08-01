@@ -32,12 +32,13 @@ class SeriesCell: UICollectionViewCell, Reusable {
         mainView.layer.masksToBounds = false
 
         nameSerieLabel.text = serie?.title
+        setUpAnimation()
         loadImage()
     }
 
     func loadImage() {
         guard let url = URL(string: "\(serie.thumbnail.path)/\(ImageFormat.portraitIncredible.rawValue).\(serie.thumbnail.thumbnailExtension)") else { return }
-        self.serieImage.af.setImage(
+        serieImage.af.setImage(
             withURL: url,
             placeholderImage: nil,
             filter: nil,

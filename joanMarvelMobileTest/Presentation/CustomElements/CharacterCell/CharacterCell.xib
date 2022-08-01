@@ -22,8 +22,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="nBr-Wc-LAM">
                                 <rect key="frame" x="0.0" y="0.0" width="400" height="72"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.2.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zOI-vZ-jtH">
-                                        <rect key="frame" x="0.0" y="1.5" width="67" height="69"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zOI-vZ-jtH">
+                                        <rect key="frame" x="0.0" y="0.0" width="67" height="72"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="zOI-vZ-jtH" secondAttribute="height" multiplier="67:72" id="QdM-nW-Mk7"/>
                                         </constraints>
@@ -47,13 +47,23 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqG-ml-3Jo" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="21.5" y="24" width="24" height="24"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="IHM-KN-YF6"/>
+                                    <constraint firstAttribute="width" constant="24" id="t2x-YF-t78"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="nBr-Wc-LAM" secondAttribute="trailing" constant="8" id="4aV-FE-2gR"/>
                             <constraint firstItem="nBr-Wc-LAM" firstAttribute="leading" secondItem="cBs-Ua-gtT" secondAttribute="leading" id="Y4c-zw-tBE"/>
+                            <constraint firstItem="dqG-ml-3Jo" firstAttribute="centerX" secondItem="zOI-vZ-jtH" secondAttribute="centerX" id="aTk-ye-DQK"/>
                             <constraint firstAttribute="bottom" secondItem="nBr-Wc-LAM" secondAttribute="bottom" id="beV-a6-Zfg"/>
                             <constraint firstItem="nBr-Wc-LAM" firstAttribute="top" secondItem="cBs-Ua-gtT" secondAttribute="top" id="gCg-OJ-Fjh"/>
+                            <constraint firstItem="dqG-ml-3Jo" firstAttribute="centerY" secondItem="cBs-Ua-gtT" secondAttribute="centerY" id="ih7-Kn-oXT"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -68,6 +78,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="animatedLoader" destination="dqG-ml-3Jo" id="XDf-Be-mfe"/>
                 <outlet property="characterNameLabel" destination="3sj-PC-Npq" id="VLS-qY-2G4"/>
                 <outlet property="idLabel" destination="cWZ-JA-qhd" id="FbT-wD-qQB"/>
                 <outlet property="mainView" destination="cBs-Ua-gtT" id="Nm3-HM-3Kp"/>
@@ -76,7 +87,4 @@
             <point key="canvasLocation" x="202.89855072463769" y="168.08035714285714"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="person.2.fill" catalog="system" width="128" height="80"/>
-    </resources>
 </document>
