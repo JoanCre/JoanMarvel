@@ -15,7 +15,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.characters.count
+        return viewModel.isFiltering ? viewModel.filteredCharacters.count : viewModel.characters.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -23,8 +23,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             loadCharacters()
         }
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterCell") as? CharacterCell else { return UITableViewCell() }
-        cell.character = viewModel.characters[indexPath.row]
+        cell.character = viewModel.isFiltering ? viewModel.filteredCharacters[indexPath.row] : viewModel.characters[indexPath.row]
         cell.setupUI()
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let characterID = viewModel.isFiltering ? viewModel.filteredCharacters[indexPath.row].id : viewModel.characters[indexPath.row].id
+        let characterDetailVC = Container.shared.characterDetailBuilder().build(characterID: characterID)
+        self.present(characterDetailVC, animated: true)
     }
 }

@@ -24,6 +24,7 @@ class CharacterCell: UITableViewCell {
     func setupUI() {
         characterNameLabel.text = character.name
         idLabel.text = String(character.id)
+        thumbnailImage.layer.cornerRadius = 8
         mainView.layer.cornerRadius = 8
         mainView.layer.shadowOpacity = 0.2
         mainView.layer.shadowRadius = 2

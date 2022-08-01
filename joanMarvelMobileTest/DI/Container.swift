@@ -21,5 +21,8 @@ extension Container {
     func homeBuilder() -> HomeBuilder {
         return HomeBuilder()
     }
-}
 
+    func characterDetailBuilder() -> CharacterDetailBuilder {
+        return CharacterDetailBuilder()
+    }
+}

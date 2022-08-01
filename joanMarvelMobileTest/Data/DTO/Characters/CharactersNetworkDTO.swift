@@ -29,7 +29,8 @@ struct ResultDataDTO: Codable {
 // MARK: - Result
 struct CharacterDTO: Codable {
     let id: Int
-    let name, resultDescription: String
+    let name: String
+    let resultDescription: String
     let modified: String
     let thumbnail: ThumbnailDTO
     let resourceURI: String
@@ -81,11 +82,6 @@ struct StoriesItemDTO: Codable {
     let name: String
     let type: String
 }
-
-//enum TypeEnumDTO: String, Codable {
-//    case cover = "cover"
-//    case interiorStory = "interiorStory"
-//}
 
 // MARK: - Thumbnail
 struct ThumbnailDTO: Codable {

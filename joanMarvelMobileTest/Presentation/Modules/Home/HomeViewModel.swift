@@ -14,9 +14,11 @@ final class HomeViewModel {
     private let router: HomeRouter
     var result: ResultDTO?
     var characters = [CharacterDTO]()
+    var filteredCharacters = [CharacterDTO]()
     var limit = 20
     var totalCharacters = 0
     var reloadLimit = 5
+    var isFiltering = false
 
     // MARK: - Init
     required init(router: HomeRouter) {
