@@ -34,7 +34,7 @@ class CharacterCell: UITableViewCell {
     }
 
     func loadImage() {
-        guard let url = URL(string: "\(character.thumbnail.path)/\(imageFormat.squareMedium.rawValue).\(character.thumbnail.thumbnailExtension)") else { return }
+        guard let url = URL(string: "\(character.thumbnail.path)/\(ImageFormat.squareMedium.rawValue).\(character.thumbnail.thumbnailExtension)") else { return }
         thumbnailImage.af.setImage(withURL: url)
     }
 }

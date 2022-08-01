@@ -13,7 +13,7 @@ struct Configuration {
     static let privateKey = "6f56e50e1548978fb1ae4fd60ae19a07256980b2"
 }
 
-enum imageFormat: String {
+enum ImageFormat: String {
     case portraitIncredible = "portrait_incredible"
     case squareMedium = "standard_medium"
     case landscapeIncredible = "landscape_incredible"

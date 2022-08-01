@@ -33,13 +33,23 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6pf-ry-o0V" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="83.5" y="138.5" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="4Yq-R3-XbJ"/>
+                                    <constraint firstAttribute="height" constant="50" id="SIH-VS-Ovy"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Re5-eY-1yx" firstAttribute="top" secondItem="kSY-6F-4jc" secondAttribute="top" id="BgR-nH-6dw"/>
                             <constraint firstItem="Re5-eY-1yx" firstAttribute="leading" secondItem="kSY-6F-4jc" secondAttribute="leading" id="GxB-9Z-aJc"/>
                             <constraint firstAttribute="trailing" secondItem="Re5-eY-1yx" secondAttribute="trailing" id="NUS-ub-Ovm"/>
+                            <constraint firstItem="6pf-ry-o0V" firstAttribute="centerX" secondItem="kSY-6F-4jc" secondAttribute="centerX" id="Xwr-S6-ngg"/>
                             <constraint firstAttribute="bottom" secondItem="Re5-eY-1yx" secondAttribute="bottom" constant="8" id="rn6-bf-H3f"/>
+                            <constraint firstItem="6pf-ry-o0V" firstAttribute="centerY" secondItem="kSY-6F-4jc" secondAttribute="centerY" id="w60-NV-ZSK"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -53,6 +63,7 @@
             </constraints>
             <size key="customSize" width="233" height="331"/>
             <connections>
+                <outlet property="animatedLoader" destination="6pf-ry-o0V" id="YEF-z6-37x"/>
                 <outlet property="mainView" destination="kSY-6F-4jc" id="50y-Jc-YQQ"/>
                 <outlet property="nameSerieLabel" destination="qnG-bu-A9b" id="0s1-IK-q9K"/>
                 <outlet property="serieImage" destination="EDb-BO-AiI" id="FsF-H4-9gz"/>

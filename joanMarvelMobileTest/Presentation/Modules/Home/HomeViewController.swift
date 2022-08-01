@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Lottie
 
 final class HomeViewController: UIViewController {
 
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var animatedLoader: AnimationView!
 
     // MARK: - Properties
     var viewModel: HomeViewModel!
@@ -24,6 +26,7 @@ final class HomeViewController: UIViewController {
         loadCharacters()
         configure(tableView: tableView)
         configureSearchBar()
+        setUpAnimation()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -40,8 +43,16 @@ final class HomeViewController: UIViewController {
             do {
                 try await viewModel.getCharacters()
                 tableView.reloadData()
+                animatedLoader.stop()
+                animatedLoader.isHidden = true
             } catch { }
         }
+    }
+
+    func setUpAnimation() {
+        animatedLoader.animation = .named("loadingAnimation")
+        animatedLoader.loopMode = .loop
+        animatedLoader.play()
     }
 }
 

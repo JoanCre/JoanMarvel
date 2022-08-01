@@ -6,13 +6,16 @@
 //
 
 import UIKit
+import Lottie
 
 class SeriesCell: UICollectionViewCell, Reusable {
 //    MARK: - IBOutlets
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var serieImage: UIImageView!
     @IBOutlet weak var nameSerieLabel: UILabel!
-//    MARK: - Properties
+    @IBOutlet weak var animatedLoader: AnimationView!
+
+    //    MARK: - Properties
     var serie: SeriesDTO!
 
 //    MARK: - Life cycle
@@ -33,7 +36,22 @@ class SeriesCell: UICollectionViewCell, Reusable {
     }
 
     func loadImage() {
-        guard let url = URL(string: "\(serie.thumbnail.path)/\(imageFormat.portraitIncredible.rawValue).\(serie.thumbnail.thumbnailExtension)") else { return }
-        serieImage.af.setImage(withURL: url)
+        guard let url = URL(string: "\(serie.thumbnail.path)/\(ImageFormat.portraitIncredible.rawValue).\(serie.thumbnail.thumbnailExtension)") else { return }
+        self.serieImage.af.setImage(
+            withURL: url,
+            placeholderImage: nil,
+            filter: nil,
+            imageTransition: .crossDissolve(0.5),
+            completion: { _ in
+                self.animatedLoader.stop()
+                self.animatedLoader.isHidden = true
+            }
+        )
+    }
+
+    func setUpAnimation() {
+        animatedLoader.animation = .named("loadingAnimation")
+        animatedLoader.loopMode = .loop
+        animatedLoader.play()
     }
 }

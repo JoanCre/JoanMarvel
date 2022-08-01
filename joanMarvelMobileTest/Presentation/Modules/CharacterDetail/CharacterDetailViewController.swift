@@ -57,9 +57,19 @@ final class CharacterDetailViewController: UIViewController {
     }
 
     func setImage() {
-        guard let url = URL(string: "\(viewModel.characters[0].thumbnail.path)/\(imageFormat.portraitIncredible.rawValue).\(viewModel.characters[0].thumbnail.thumbnailExtension)") else { return }
+        guard let url = URL(string: "\(viewModel.characters[0].thumbnail.path)/\(ImageFormat.portraitIncredible.rawValue).\(viewModel.characters[0].thumbnail.thumbnailExtension)") else { return }
         characterImage.af.setImage(withURL: url)
-        animatedLoader.stop()
+
+        self.characterImage.af.setImage(
+            withURL: url,
+            placeholderImage: nil,
+            filter: nil,
+            imageTransition: .crossDissolve(0.5),
+            completion: { _ in
+                self.animatedLoader.stop()
+                self.animatedLoader.isHidden = true
+            }
+        )
     }
 
     func setUpAnimation() {
