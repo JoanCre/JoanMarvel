@@ -10,14 +10,14 @@ import XCTest
 
 class HomeViewModelTests: XCTestCase {
 
-    var viewModel: HomeViewModel!
+    var viewModel = HomeViewModel(router: HomeRouterFake())
 
     override func setUp() {
         self.viewModel = HomeViewModel(router: HomeRouterFake())
     }
 
     override func tearDown() {
-        viewModel = nil
+        super.tearDown()
     }
 }
 

@@ -10,14 +10,14 @@ import XCTest
 
 class CharacterDetailTests: XCTestCase {
 
-    var viewModel: CharacterDetailViewModel!
+    var viewModel = CharacterDetailViewModel(router: CharacterDetailRouterFake(), characterID: 1011334)
 
     override func setUp() {
         self.viewModel = CharacterDetailViewModel(router: CharacterDetailRouterFake(), characterID: 1011334)
     }
 
     override func tearDown() {
-        viewModel = nil
+        super.tearDown()
     }
 }
 
@@ -28,7 +28,6 @@ extension CharacterDetailTests {
             try await viewModel.getCharacter()
             let count = viewModel.characters.count
             XCTAssertEqual(count, originalCount + 1)
-
         }
     }
 
@@ -52,7 +51,7 @@ extension CharacterDetailTests {
         }
     }
 
-    func testGetSerieURLError(){
+    func testGetSerieURLError() {
         Task {
             Configuration.baseUrl = ""
             do {
