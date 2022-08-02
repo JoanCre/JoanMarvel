@@ -17,7 +17,6 @@ final class HomeViewController: UIViewController {
 
     // MARK: - Properties
     var viewModel: HomeViewModel!
-    let searchController = UISearchController()
 
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -25,7 +24,6 @@ final class HomeViewController: UIViewController {
         setupAppearance()
         loadCharacters()
         configure(tableView: tableView)
-        configureSearchBar()
         setUpAnimation()
     }
 
@@ -44,7 +42,7 @@ final class HomeViewController: UIViewController {
                 try await viewModel.getCharacters()
                 tableView.reloadData()
                 animatedLoader.stop()
-                animatedLoader.isHidden = true
+        animatedLoader.isHidden = true
             } catch { }
         }
     }
@@ -53,24 +51,5 @@ final class HomeViewController: UIViewController {
         animatedLoader.animation = .named("loadingAnimation")
         animatedLoader.loopMode = .loop
         animatedLoader.play()
-    }
-}
-
-// MARK: - SearchBarController
-extension HomeViewController: UISearchResultsUpdating {
-    func configureSearchBar() {
-        navigationItem.searchController = searchController
-        searchController.searchResultsUpdater = self
-    }
-
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else { return }
-
-        viewModel.isFiltering = text == ""
-        if viewModel.isFiltering {
-            viewModel.filteredCharacters.removeAll()
-            viewModel.filteredCharacters = viewModel.characters.filter { $0.name.lowercased().contains(text.lowercased()) }
-        }
-        tableView.reloadData()
     }
 }

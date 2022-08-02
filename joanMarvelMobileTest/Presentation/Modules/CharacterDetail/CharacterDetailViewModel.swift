@@ -11,7 +11,7 @@ import Foundation
 final class CharacterDetailViewModel {
 
     // MARK: - Properties
-    private let router: CharacterDetailRouter
+    private let router: CharacterDetailRouterProtocol
     var characterID = 0
     var resultSeries: ResultSeriesDTO?
     var series = [SeriesDTO]()
@@ -19,7 +19,7 @@ final class CharacterDetailViewModel {
     var characters = [CharacterDTO]()
 
     // MARK: - Init
-    required init(router: CharacterDetailRouter, characterID: Int) {
+    required init(router: CharacterDetailRouterProtocol, characterID: Int) {
         self.router = router
         self.characterID = characterID
     }
@@ -28,7 +28,7 @@ final class CharacterDetailViewModel {
 // MARK: - Functions
 extension CharacterDetailViewModel {
     func getCharacter() async throws {
-        guard let url = URL(string: "\(Configuration.baseUrl)characters/\(characterID)?\(Network.getAuthenticationPath())") else { return }
+        guard let url = URL(string: "\(Configuration.baseUrl)characters/\(characterID)?\(Network.getAuthenticationPath())") else { throw NetworkError.server }
         let request = URLRequest(url: url)
         do {
             resultCharacters = try await Network.load(request: request, of: ResultDTO.self)

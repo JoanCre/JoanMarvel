@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		547B4DAA28994EAF00B46F9F /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547B4DA928994EAF00B46F9F /* HomeViewModelTests.swift */; };
+		547B4DAC28994F2100B46F9F /* HomeRouterFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547B4DAB28994F2100B46F9F /* HomeRouterFake.swift */; };
+		547B4DB128995C6600B46F9F /* CharacterDetailRouterFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547B4DB028995C6600B46F9F /* CharacterDetailRouterFake.swift */; };
+		547B4DB328995D2700B46F9F /* CharacterDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547B4DB228995D2700B46F9F /* CharacterDetailTests.swift */; };
 		54C7CE732893C2BE001A4847 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C7CE722893C2BE001A4847 /* AppDelegate.swift */; };
 		54C7CE752893C2BE001A4847 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C7CE742893C2BE001A4847 /* SceneDelegate.swift */; };
 		54C7CE7C2893C2C0001A4847 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54C7CE7B2893C2C0001A4847 /* Assets.xcassets */; };
@@ -59,6 +63,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		547B4DA928994EAF00B46F9F /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		547B4DAB28994F2100B46F9F /* HomeRouterFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouterFake.swift; sourceTree = "<group>"; };
+		547B4DB028995C6600B46F9F /* CharacterDetailRouterFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailRouterFake.swift; sourceTree = "<group>"; };
+		547B4DB228995D2700B46F9F /* CharacterDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailTests.swift; sourceTree = "<group>"; };
 		54C7CE6F2893C2BE001A4847 /* joanMarvelMobileTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = joanMarvelMobileTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C7CE722893C2BE001A4847 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54C7CE742893C2BE001A4847 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +130,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		547B4DA628994E7700B46F9F /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				547B4DA728994E8600B46F9F /* Modules */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		547B4DA728994E8600B46F9F /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				547B4DAF28995C4400B46F9F /* CharacterDetail */,
+				547B4DA828994E9000B46F9F /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		547B4DA828994E9000B46F9F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				547B4DA928994EAF00B46F9F /* HomeViewModelTests.swift */,
+				547B4DAB28994F2100B46F9F /* HomeRouterFake.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		547B4DAF28995C4400B46F9F /* CharacterDetail */ = {
+			isa = PBXGroup;
+			children = (
+				547B4DB028995C6600B46F9F /* CharacterDetailRouterFake.swift */,
+				547B4DB228995D2700B46F9F /* CharacterDetailTests.swift */,
+			);
+			path = CharacterDetail;
+			sourceTree = "<group>";
+		};
 		54C7CE662893C2BE001A4847 = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +201,7 @@
 		54C7CE882893C2C0001A4847 /* joanMarvelMobileTestTests */ = {
 			isa = PBXGroup;
 			children = (
+				547B4DA628994E7700B46F9F /* Presentation */,
 				54C7CE892893C2C0001A4847 /* joanMarvelMobileTestTests.swift */,
 			);
 			path = joanMarvelMobileTestTests;
@@ -493,6 +537,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				54C7CE8A2893C2C0001A4847 /* joanMarvelMobileTestTests.swift in Sources */,
+				547B4DAA28994EAF00B46F9F /* HomeViewModelTests.swift in Sources */,
+				547B4DB128995C6600B46F9F /* CharacterDetailRouterFake.swift in Sources */,
+				547B4DB328995D2700B46F9F /* CharacterDetailTests.swift in Sources */,
+				547B4DAC28994F2100B46F9F /* HomeRouterFake.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class HomeRouter {
+final class HomeRouter: HomeRouterProtocol {
     // MARK: - Properties
 	private weak var viewController: UIViewController?
 
@@ -20,3 +20,5 @@ final class HomeRouter {
     // MARK: - Functions
 
 }
+
+protocol HomeRouterProtocol { }

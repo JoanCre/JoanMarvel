@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class CharacterDetailRouter {
+final class CharacterDetailRouter: CharacterDetailRouterProtocol {
     // MARK: - Properties
     private weak var viewController: UIViewController?
 
@@ -20,3 +20,6 @@ final class CharacterDetailRouter {
     // MARK: - Functions
 
 }
+
+protocol CharacterDetailRouterProtocol { }
+

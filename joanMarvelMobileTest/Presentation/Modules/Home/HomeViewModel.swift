@@ -11,7 +11,7 @@ import Foundation
 final class HomeViewModel {
 
     // MARK: - Properties
-    private let router: HomeRouter
+    private let router: HomeRouterProtocol
     var result: ResultDTO?
     var characters = [CharacterDTO]()
     var filteredCharacters = [CharacterDTO]()
@@ -21,7 +21,7 @@ final class HomeViewModel {
     var isFiltering = false
 
     // MARK: - Init
-    required init(router: HomeRouter) {
+    required init(router: HomeRouterProtocol) {
         self.router = router
     }
 }
@@ -37,7 +37,7 @@ extension HomeViewModel {
         let request = URLRequest(url: url)
         do {
             result = try await Network.load(request: request, of: ResultDTO.self)
-            totalCharacters = result?.data.total ?? 0
+//            totalCharacters = result?.data.total ?? 0
             characters.append(contentsOf: result?.data.results ?? [])
         } catch {
             print(error)
