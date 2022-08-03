@@ -32,6 +32,4 @@ extension CharacterDetailViewControllerTests {
         characterDetailViewController.configure(characterDetailViewController.collectionView)
         XCTAssertNotNil(characterDetailViewController.collectionView)
     }
-
-
 }
