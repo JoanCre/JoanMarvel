@@ -63,7 +63,7 @@
 		54C7CE742893C2BE001A4847 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		54C7CE7B2893C2C0001A4847 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54C7CE7E2893C2C0001A4847 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		54C7CE802893C2C0001A4847 /* Infoo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Infoo.plist; sourceTree = "<group>"; };
+		54C7CE802893C2C0001A4847 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54C7CE852893C2C0001A4847 /* joanMarvelMobileTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = joanMarvelMobileTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C7CEAA2893C61D001A4847 /* CharactersNetworkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersNetworkDTO.swift; sourceTree = "<group>"; };
 		54C7CEB22893DD59001A4847 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 				54C7CEA22893C353001A4847 /* Presentation */,
 				54C7CEF4289705B8001A4847 /* Resources */,
 				54C7CE7D2893C2C0001A4847 /* LaunchScreen.storyboard */,
-				54C7CE802893C2C0001A4847 /* Infoo.plist */,
+				54C7CE802893C2C0001A4847 /* Info.plist */,
 			);
 			path = joanMarvelMobileTest;
 			sourceTree = "<group>";
